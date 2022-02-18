@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using System.IO;
 using FileIoOperation.BinaryDataFormat;
 using FileIoOperation.JSONDataFormat;
+using FileIoOperation.XmlFileIOOperations;
+using FileIoOperation.CsvFileOperations;
+using FileIoOperation.JsonToCsvAndCsvToJson;
 
 namespace FileIoOperation
 {
@@ -26,8 +29,9 @@ namespace FileIoOperation
             {
                 while (true)
                 {
-                    Console.WriteLine("1: Check File Exist \n2: ReadLineByLine \n3: ReadAllText \n4: Copy File Content \n5: Delete File \n6: Stream Data Reader" +
-                                      "\n7: Stream Data Write \n8: Binary Serialization \n9: Binary Deserialization \n10: Json Serialization \n11: Json Deserialization \n12: Read Given File \n13: Exit");
+                    Console.WriteLine("1: Check File Exist \n2: ReadLineByLine \n3: ReadAllText \n4: Copy File Content \n5: Delete File \n6: Stream Data Reader"+
+                                      "\n7: Stream Data Write \n8: Binary Serialization \n9: Binary Deserialization \n10: Json Serialization \n11: Json Deserialization \n12: Read Given File"+
+                                      "\n13: Xml Read And Write Operations \n14: Csv Read And Write Operations \n15: Read Data From Csv And Write Into Json \n16: Read Data From Json And Write Into Csv \n17: Exit");
                     Console.Write("Enter a choice from above : ");
                     bool flag = int.TryParse(Console.ReadLine(), out int choice);
                     if (flag)
@@ -91,6 +95,24 @@ namespace FileIoOperation
                                 ReadFileLineByLine(Console.ReadLine());
                                 break;
                             case 13:
+                                //Calling the method to read and write the csv file 
+                                CsvDataOperations.CsvSerialize();
+                                CsvDataOperations.CsvDeSerialize();
+                                break;
+                            case 14:
+                                //Calling the method to read and write the xml file 
+                                XmlFileOperation.XmlSerialize();
+                                XmlFileOperation.XmlDeSerialize();
+                                break;
+                            case 15:
+                                //Calling the method to read data from csv and write into json
+                                JsonCsvDataOperations.ReadFromCsvWriteIntoJson();
+                                break;
+                            case 16:
+                                //Calling the method to read data from json and write into csv
+                                JsonCsvDataOperations.ReadFromJsonWriteIntoCsv();
+                                break;
+                            case 17:
                                 //For exiting the console
                                 Environment.Exit(0);
                                 break;

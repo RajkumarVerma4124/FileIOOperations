@@ -13,10 +13,12 @@ namespace FileIoOperation.BinaryDataFormat
     /// </summary>
     public class BinaryIODataperations
     {
+        //Declaring file path for binar file
+        public static string binaryFilePath = @"E:\CODING\Coding\React Web Apps\coreAPI\Fellowship\RegularExpression\FileIoOperation\TextFilesIO\BinaryData.bin";
+
         //Method to use binary serialize to add streams of data into the file
         public static void BinarySerialize()
         {
-            string binaryFilePath = @"E:\CODING\Coding\React Web Apps\coreAPI\Fellowship\RegularExpression\FileIoOperation\TextFilesIO\BinaryData.bin";
             Contact contact = new Contact() { FName="Raj", LName="Verma", Address="Mumbai", ZipCode=987456 };
             FileStream stream = new FileStream(binaryFilePath, FileMode.OpenOrCreate);
             BinaryFormatter binary = new BinaryFormatter();
@@ -27,7 +29,6 @@ namespace FileIoOperation.BinaryDataFormat
         //Method to use binary deserialize to read streams of data from the file
         public static void BinaryDeSerialize()
         {
-            string binaryFilePath = @"E:\CODING\Coding\React Web Apps\coreAPI\Fellowship\RegularExpression\FileIoOperation\TextFilesIO\BinaryData.bin";
             FileStream stream = new FileStream(binaryFilePath, FileMode.Open);
             BinaryFormatter binary = new BinaryFormatter();
             Contact res = (Contact)binary.Deserialize(stream);

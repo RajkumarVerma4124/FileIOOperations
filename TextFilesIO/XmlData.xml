@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Student>
+    <FName>Raj</FName>
+    <LName>Verma</LName>
+    <Address>Mumbai</Address>
+    <ZipCode>987445</ZipCode>
+  </Student>
+  <Student>
+    <FName>Yash</FName>
+    <LName>Verma</LName>
+    <Address>NaviMumbai</Address>
+    <ZipCode>987456</ZipCode>
+  </Student>
+  <Student>
+    <FName>Mansi</FName>
+    <LName>Verma</LName>
+    <Address>Delhi</Address>
+    <ZipCode>987756</ZipCode>
+  </Student>
+</ArrayOfStudent>

@@ -13,10 +13,12 @@ namespace FileIoOperation.JSONDataFormat
     /// </summary>
     public class JsonIODataOpertions
     {
+        //Declaring json file path
+        public static string jsonFilePath = @"E:\CODING\Coding\React Web Apps\coreAPI\Fellowship\RegularExpression\FileIoOperation\TextFilesIO\JsonData.json";
+
         //Method to use Jsonconvert serializeObject to convert object to json string data to write into the file
         public static void JsonSerialize()
         {
-            string jsonFilePath = @"E:\CODING\Coding\React Web Apps\coreAPI\Fellowship\RegularExpression\FileIoOperation\TextFilesIO\JsonData.json";
             List<Student> students = new List<Student>()
             {
                 new Student() { FName = "Raj", LName = "Verma", Address = "Mumbai", ZipCode = 987445 },
@@ -55,7 +57,7 @@ namespace FileIoOperation.JSONDataFormat
 
         //Overriding the tostring method
         public override string ToString()
-        {;
+        {
             return $"FirstName : {FName} \tLastName : {LName} \tAddress : {Address} \tZipCode : {ZipCode}";
         }
     }
